@@ -5,6 +5,9 @@
     </div>
     <div class="column is-three-quarter">
       <FormularioPrincipal />
+      <div class="lista">
+        <TarefaFormulario />
+      </div>
     </div>
   </main>
 </template>
@@ -13,13 +16,22 @@
 import { defineComponent } from 'vue';
 import BarraLateral from './components/BarraLateral.vue'
 import FormularioPrincipal from './components/FormularioPrincipal.vue';
+import TarefaFormulario from './components/TarefaFormulario.vue';
+import ITarefa from './interfaces/ITarefa';
 export default defineComponent({
   name: 'App',
   components: {
     BarraLateral,
-    FormularioPrincipal
+    FormularioPrincipal,
+    TarefaFormulario
+  },
+  data() {
+    return {
+      tarefas: [] as ITarefa[]
+    }
   }
 });
+
 </script>
 
 <style>
